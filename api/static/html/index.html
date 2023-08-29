@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://i.postimg.cc/R0PXVdQY/Untitled-design-removebg-preview.png" type="image/x-icon">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Lift Off Life - Router Description</title>
+</head>
+
+<body>
+    <main class="container">
+        <div class="container">
+            <h1 class="m-5 text-center">Router Descriptions</h1>
+        </div>
+
+        
+        <!-- Home router -->
+        <div class="container">
+            <h3 class="m-2 text-center"> Home</h3>
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">HTTP Methods</th>
+                        <th scope="col">Paths</th>
+                        <th scope="col">Descriptions</th>
+                    </tr>
+                </thead>
+                <tbody class="table">
+                    <tr>
+                        <td>GET</td>
+                        <td>/home</td>
+                        <td>This router takes you to the Home Page of the API.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <br>
+        <!-- Users Router -->
+        <div class="container">
+            <h3 class="m-2 text-center">Users</h3>
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">HTTP Methods</th>
+                        <th scope="col">Paths</th>
+                        <th scope="col">Descriptions</th>
+                    </tr>
+                </thead>
+                <tbody class="table">
+                    <tr>
+                        <td>GET</td>
+                        <td>/users</td>
+                        <td>This router shows all the users in the database.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/user/:id</td>
+                        <td>This router shows a single user when a user requests an ID.</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>/user</td>
+                        <td>This router allows us to register/add a new user.</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>/login</td>
+                        <td>This router allows a user to login.</td>
+                    </tr>
+                    <tr>
+                        <td>PATCH</td>
+                        <td>/user/:id</td>
+                        <td>This router allows us to update a users details in the database.</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>/user/:id</td>
+                        <td>This router allows us to delete a user and their details in the database.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+        <br>
+        <!-- Courses router  -->
+        <div class="container">
+            <h3 class="m-2 text-center">Courses</h3>
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">HTTP Methods</th>
+                        <th scope="col">Paths</th>
+                        <th scope="col">Descriptions</th>
+                    </tr>
+                </thead>
+                <tbody class="table">
+                    <tr>
+                        <td>GET</td>
+                        <td>/courses</td>
+                        <td>This router shows all the courses in the database.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/course/:id</td>
+                        <td>This router shows a single course when a user requests the course by ID.</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>/course</td>
+                        <td>This router allows us to add a new course into the database.</td>
+                    </tr>
+                    <tr>
+                        <td>PACTH</td>
+                        <td>/course/:id</td>
+                        <td>This router is used to update a course and its details on the database.</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>/course/:id</td>
+                        <td>This router is used to delete a course from the database.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
+        <br>
+        <!-- Appointments router  -->
+        <div class="container">
+            <h3 class="m-2 text-center">Appointments</h3>
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">HTTP Methods</th>
+                        <th scope="col">Paths</th>
+                        <th scope="col">Descriptions</th>
+                    </tr>
+                </thead>
+                <tbody class="table">
+                    <tr>
+                        <td>GET</td>
+                        <td>/appointments</td>
+                        <td>This router shows all the appointments in the database.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/appointment/:id</td>
+                        <td>This router shows a single appointment when a user requests the appointment by ID.</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>/appointment</td>
+                        <td>This router allows us to add a new appointment into the database.</td>
+                    </tr>
+                    <tr>
+                        <td>PACTH</td>
+                        <td>/appointment/:id</td>
+                        <td>This router is used to update an appointment and its details on the database.</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>/appointment/:id</td>
+                        <td>This router is used to delete an appointment from the database.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+
+        
+    </main>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
