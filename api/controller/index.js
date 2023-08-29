@@ -37,19 +37,19 @@ routes.get("/appointments", (req, res) => {
 });
 
 routes.get("/appointment/:id", (req, res) => {
-  appointments.fetchAppointments(req, res);
+  appointments.fetchAppointment(req, res);
 });
 
 routes.post("/appointment", bodyParser.json(), (req, res) => {
-  appointments.addAppointments(req, res);
+  appointments.addAppointment(req, res);
 });
 
 routes.patch("/appointment/:id", bodyParser.json(), (req, res) => {
-  appointments.updateAppointments(req, res);
+  appointments.updateAppointment(req, res);
 });
 
 routes.delete("/appointment/:id", (req, res) => {
-  appointments.deleteAppointments(req, res);
+  appointments.deleteAppointment(req, res);
 });
 
 // Courses
@@ -59,19 +59,19 @@ routes.get("/courses", (req, res) => {
 });
 
 routes.get("/course/:id", (req, res) => {
-  courses.fetchCourses(req, res);
+  courses.fetchCourse(req, res);
 });
 
 routes.post("/course", bodyParser.json(), (req, res) => {
-  courses.addCourses(req, res);
+  courses.addCourse(req, res);
 });
 
 routes.patch("/course/:id", bodyParser.json(), (req, res) => {
-  courses.updateCourses(req, res);
+  courses.updateCourse(req, res);
 });
 
 routes.delete("/course/:id", (req, res) => {
-  courses.deleteCourses(req, res);
+  courses.deleteCourse(req, res);
 });
 
 // export
