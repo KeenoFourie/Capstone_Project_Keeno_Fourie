@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
     component: HomeView
   },
@@ -61,6 +61,31 @@ const routes = [
     path: '/register',
     name: 'register',
     component: () => import('../views/RegisterView.vue')
+  },
+  {
+    path: '/question_1',
+    name: 'question_1',
+    component: () => import('../views/Question_1View.vue')
+  },
+  {
+    path: '/question_2',
+    name: 'question_2',
+    component: () => import('../views/Question_2View.vue')
+  },
+  {
+    path: '/question_3',
+    name: 'question_3',
+    component: () => import('../views/Question_3View.vue')
+  },
+  {
+    path: '/question_4',
+    name: 'question_4',
+    component: () => import('../views/Question_4View.vue')
+  },
+  {
+    path: '/question_5',
+    name: 'question_5',
+    component: () => import('../views/Question_5View.vue')
   },
 ]
 

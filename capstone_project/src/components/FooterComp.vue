@@ -95,6 +95,13 @@
     text-decoration: none;
     color: #787878;
 }
+#button_for_join_the_drive:hover {
+    border: 2px solid #787878;
+    background-color: #787878;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: yellow;
+}
 .footer_headings {
     color: #787878;
 }

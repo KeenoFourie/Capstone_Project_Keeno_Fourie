@@ -9,7 +9,7 @@
                 
                 <ul class="nav" id="all_navbar_links">
                     <li class="nav-item">
-                        <router-link id="navbar_links" class="nav-link" aria-current="page" to="/home">Home</router-link>
+                        <router-link id="navbar_links" class="nav-link" aria-current="page" to="/">Home</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/about">About Us</router-link>
