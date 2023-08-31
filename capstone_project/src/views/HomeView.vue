@@ -3,10 +3,10 @@
     <!-- landing page welcome -->
     <div id="landing_page_welcome">
       <div id="get_involved">
-        <h1>Get</h1>
-        <h3>Involved</h3>
-        <h3>With</h3>
-        <h3>Us ...</h3>
+        <h1 id="get">Get</h1>
+        <h3 id="involved">Involved</h3>
+        <h3 id="with">With</h3>
+        <h3 id="us">Us ...</h3>
       </div>
       <div id="structure_welcome_text">
         <p id="text_welcome_text">Make your first booking today and stand a chance to win a free course with us. Become loyal customer today and let us help you to achieve your goals.</p>
@@ -83,6 +83,18 @@
 </script>
 
 <style scoped>
+#get {
+  font-size: 5rem;
+}
+#involved {
+  font-size: 3rem;
+}
+#with {
+  font-size: 3rem;
+}
+#us {
+  font-size: 3rem;
+}
 .questions {
   text-decoration: none;
   color: #2A2A2A;
@@ -137,7 +149,6 @@
 }
 #text_welcome_text {
   width: 30%;
-  padding: 2rem;
 }
 #arrow_down {
   margin-bottom: 0.8rem;
@@ -146,14 +157,14 @@
   margin: 3rem;
 }
 #landing_page_welcome {
-  background-image: url("https://i.postimg.cc/vTjL4JB0/wallpaperflare-com-wallpaper-15.jpg");
+  background-image: url("https://wallpaperaccess.com/full/804850.jpg");
   background-size: 100%;
   color: white;
   display: flex;
   flex-direction: column;
 }
 #get_involved {
-  margin: 3rem;
+  margin: 1rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;

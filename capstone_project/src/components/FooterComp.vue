@@ -5,7 +5,7 @@
         <div id="top_footer">
             <div id="support">
                 <h5 class="footer_headings">Support</h5>
-                <router-link class="links_in_footer" to="/home">Home</router-link>
+                <router-link class="links_in_footer" to="/">Home</router-link>
                 <router-link class="links_in_footer" to="/courses">Courses</router-link>
                 <router-link class="links_in_footer" to="/appointments">Bookings</router-link>
                 <router-link class="links_in_footer" to="/contact_us">Contact Us</router-link>
