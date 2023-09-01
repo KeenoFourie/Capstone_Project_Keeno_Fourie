@@ -36,6 +36,10 @@ export default {
 </script>
 
 <style scoped>
+#heading_displayed_courses {
+    color: black;
+    padding: 2rem;
+}
 .card-title {
     color: yellow;
 }

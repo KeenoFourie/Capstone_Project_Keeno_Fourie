@@ -48,11 +48,6 @@ const routes = [
     component: () => import('../views/CoursesView.vue')
   },
   {
-    path: '/display_one',
-    name: 'display_one',
-    component: () => import('../views/DisplayOneView.vue')
-  },
-  {
     path: '/login',
     name: 'login',
     component: () => import('../views/LoginView.vue')
