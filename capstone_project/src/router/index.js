@@ -87,6 +87,12 @@ const routes = [
     name: 'question_5',
     component: () => import('../views/Question_5View.vue')
   },
+  {
+    path: "/course/:courseID",
+    name: "singlecourse",
+    props: true,
+    component: () => import("../views/CourseDisplayView.vue"),
+  },
 ]
 
 const router = createRouter({
