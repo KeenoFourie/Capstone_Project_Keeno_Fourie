@@ -23,7 +23,7 @@ fetchAppointment(req, res) {
   const query = `
   SELECT appointID, firstName, lastName, userAge, gender, maritalStatus, cellNumber, emailAdd, appointTime, appointPrice, userWeight, userHeight, userDisability, userInjury, userHealth, whyUs, userID, courseID
   FROM Appointments
-  WHERE userID = ${req.params.id};
+  WHERE appointID = ${req.params.id};
   `;
 
   db.query(query, (err, result) => {
@@ -60,7 +60,7 @@ updateAppointment(req, res) {
   const query = `
   UPDATE Appointments
   SET ?
-  WHERE userID = ?;
+  WHERE appointID = ?;
   `;
 
   db.query(query, [data, req.params.id], (err) => {
@@ -76,7 +76,7 @@ updateAppointment(req, res) {
 deleteAppointment(req, res) {
   const query = `
   DELETE FROM Appointments
-  WHERE userID = ${req.params.id};
+  WHERE appointID = ${req.params.id};
   `;
 
   db.query(query, (err) => {
