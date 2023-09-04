@@ -33,15 +33,15 @@
         </div>
         <div class="mb-3">
           <label for="exampleDropdown" class="form-label">Appointment Time:</label>
-          <input type="appointTime" class="form-control" id="exampleDropdown" v-model="newAppointment.appointTime" placeholder="Appointment Time..." required oninvalid="this.setCustomValidity('Please Insert An Appointment Time')" oninput="this.setCustomValidity('')">
+          <input type="appointTime" class="form-control" id="exampleDropdown" v-model="newAppointment.appointTime" placeholder="E.g. 12h00 14 September 2023..." required oninvalid="this.setCustomValidity('Please Insert An Appointment Time')" oninput="this.setCustomValidity('')">
         </div>
         <div class="mb-3">
           <label for="exampleDropdown" class="form-label">Your Weight:</label>
-          <input type="userWeight" class="form-control" id="exampleDropdown" v-model="newAppointment.userWeight" placeholder="Your Weight..." required oninvalid="this.setCustomValidity('Please Insert Your Weight')" oninput="this.setCustomValidity('')">
+          <input type="userWeight" class="form-control" id="exampleDropdown" v-model="newAppointment.userWeight" placeholder="In kg..." required oninvalid="this.setCustomValidity('Please Insert Your Weight')" oninput="this.setCustomValidity('')">
         </div>
         <div class="mb-3">
           <label for="exampleDropdown" class="form-label">Your height:</label>
-          <input type="userHeight" class="form-control" id="exampleDropdown" v-model="newAppointment.userHeight" placeholder="Your height..." required oninvalid="this.setCustomValidity('Please Insert Your Height')" oninput="this.setCustomValidity('')">
+          <input type="userHeight" class="form-control" id="exampleDropdown" v-model="newAppointment.userHeight" placeholder="In cm..." required oninvalid="this.setCustomValidity('Please Insert Your Height')" oninput="this.setCustomValidity('')">
         </div>
         <div class="mb-3">
           <label for="exampleDropdown" class="form-label">Disabilities:</label>
@@ -90,7 +90,7 @@ methods: {
     this.$store.dispatch('addAppointment', this.newAppointment);
 
     // clears all the inputs
-    this.newWatch = {
+    this.newAppointment = {
         firstName: '',
         lastName: '',
         userAge: '',
@@ -98,7 +98,6 @@ methods: {
         maritalStatus: '', 
         emailAdd: '',
         cellNumber: '',
-        appointTime : '',
         userWeight: '',
         userHeight: '',
         userDisability: '',
