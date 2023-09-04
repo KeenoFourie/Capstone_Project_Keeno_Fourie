@@ -12,7 +12,7 @@
         <p id="text_welcome_text">Make your first booking today and stand a chance to win a free course with us. Become loyal customer today and let us help you to achieve your goals.</p>
       </div>
       <div id="join_button_div">
-        <a href="/login" id="join_button">Join Now</a>
+        <a href="/register" id="join_button">Join Now</a>
       </div>
       <div id="arrow_down">
         <a href="#heading_courses_page" id="down_arrow"><i class="fa-solid fa-angles-down" style="color: #ffffff;"></i></a>
