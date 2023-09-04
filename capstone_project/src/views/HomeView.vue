@@ -162,6 +162,7 @@
   color: white;
   display: flex;
   flex-direction: column;
+  text-shadow: 3px 3px 4px black;
 }
 #get_involved {
   margin: 1rem;
@@ -175,5 +176,6 @@
   border: 2px solid yellow;
   background-color: yellow;
   padding: 0.8rem;
+  text-shadow: none;
 }
 </style>
