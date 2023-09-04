@@ -26,12 +26,12 @@
 
       <!-- cards -->
       <div id="cards_positioning">
-        <div class="card" id="courses_card">
-          <img src="image" class="card-img" alt="courses_image">
-        <div class="card-img-overlay">
+        <div class="card" v-for="courses in courses" :key="courses.courseID" id="courses_card">
+          <img id="card_image" :src="courses.courseImage" :alt="courses.courseName">
+          <div class="card-img-overlay">
           <div id="empty_div"></div>
-          <h2 class="card-title">Title</h2>
-          <h5 class="card-text">Type Of Training</h5>
+          <h1>{{courses.courseName}}</h1>
+          <h4>{{courses.coursePurpose}}</h4>   
         </div>
       </div>
     </div>
@@ -77,12 +77,25 @@
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+    computed: {
+      courses() {
+          return this.$store.state.courses
+      }
+  },
+      mounted() {
+          this.$store.dispatch('fetchCourses')
+      }
+};
 </script>
 
 <style scoped>
+.card {
+  margin: 1rem;
+}
+#card_image {
+  filter: brightness(20%);
+}
 #get {
   font-size: 5rem;
 }
@@ -121,6 +134,7 @@
 .card-img-overlay {
   display: flex;
   flex-direction: column;
+  text-align: left;
   justify-content: end;
   color: white;
 }
