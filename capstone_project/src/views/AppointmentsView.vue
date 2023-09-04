@@ -26,6 +26,7 @@ import AddAppointment from '../components/AddAppointment.vue'
 <style scoped>
 h1 {
     padding: 1rem;
+    text-shadow: 3px 3px 4px black;
 }
 #appointment_page {
     display: flex;
