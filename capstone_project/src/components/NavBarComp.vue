@@ -27,6 +27,9 @@
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/contact_us">Contact Us</router-link>
                     </li>
                     <li class="nav-item">
+                        <router-link id="navbar_links" class="nav-link" aria-current="page" to="/admin">Admin</router-link>
+                    </li>
+                    <li class="nav-item">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/account">Account</router-link>
                     </li>
                     <li class="nav-item">
