@@ -79,7 +79,9 @@ login(req, res) {
 
 async register(req, res) {
   const data = req.body;
+  // encrypt password
   data.userPassword = await hash(data.userPassword, 10);  // 10 is going to add extra random letters to password so it stays encrypted.
+  // make password secure/more secure
   const user = {
     emailAdd: data.emailAdd,
     userPassword: data.userPassword,
