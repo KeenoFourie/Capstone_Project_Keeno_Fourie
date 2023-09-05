@@ -28,7 +28,7 @@ fetchAppointment(req, res) {
 
   db.query(query, (err, result) => {
     if (err) throw err;
-    res.join({
+    res.json({
       status: res.statusCode,
       result
     });

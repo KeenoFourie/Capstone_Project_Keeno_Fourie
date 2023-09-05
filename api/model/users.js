@@ -5,7 +5,7 @@ const { createToken } = require("../middleware/AuthenticateUser");
 class Users {
   fetchUsers(req, res) {
   const query = `
-  SELECT userID, firstName, lastName, userAge, gender, maritalStatus, cellNumber, emailAdd, userProfile
+  SELECT userID, firstName, lastName, userAge, gender, maritalStatus, cellNumber, userProfile, userRole, emailAdd, userPassword
   FROM Users;
   `;
   
@@ -21,14 +21,14 @@ class Users {
 
 fetchUser(req, res) {
   const query = `
-  SELECT userID, firstName, lastName, userAge, gender, maritalStatus, cellNumber, emailAdd, userProfile
+  SELECT userID, firstName, lastName, userAge, gender, maritalStatus, cellNumber, userProfile, userRole, emailAdd, userPassword
   FROM Users
   WHERE userID = ${req.params.id};
   `;
 
   db.query(query, (err, result) => {
     if (err) throw err;
-    res.join({
+    res.json({
       status: res.statusCode,
       result
     });
@@ -39,7 +39,7 @@ fetchUser(req, res) {
 login(req, res) {
   const { emailAdd, userPassword } = req.body;
   const query = `
-  SELECT userID, firstName, lastName, userAge, gender, maritalStatus, cellNumber, emailAdd, userProfile, userPassword
+  SELECT userID, firstName, lastName, userAge, gender, maritalStatus, cellNumber, userProfile, userRole, emailAdd, userPassword
   FROM Users
   WHERE emailAdd = '${emailAdd}';
   `;
