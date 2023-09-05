@@ -14,7 +14,7 @@ routes.get("/user/:id", (req, res) => {
   users.fetchUser(req, res);
 });
 
-routes.post("/user", bodyParser.json(), (req, res) => {
+routes.post("/register", bodyParser.json(), (req, res) => {
   users.register(req, res);
 });
 
