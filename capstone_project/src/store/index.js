@@ -20,6 +20,10 @@ export default createStore({
     setCourses(state, courses) {
       state.courses = courses
     },
+    // delete button courses
+    deleteCourse(state, courseID) {
+      state.courses = state.courses.filter(course => course.courseID !== courseID);
+    },
     // view more
     setCourse(state, course) {
       state.course = course;
@@ -54,6 +58,15 @@ export default createStore({
       context.commit("setCourses", data.results);
     } catch (e) {
       context.commit("setMsg", "An error has occurred")
+    }
+  },
+  // delete button courses
+  async deleteCourse(context, courseID) {
+    try {
+      await axios.delete(`${dataUrl}course/${courseID}`);
+      context.commit("deleteCourse", courseID);
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred");
     }
   },
   // view more

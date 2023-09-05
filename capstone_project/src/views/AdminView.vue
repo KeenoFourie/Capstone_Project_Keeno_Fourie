@@ -4,43 +4,36 @@
          <div v-if="courses" class="container-fluid">
             <table class="container-fluid-2">
               <thead>
-                <th>Watch ID</th>
-                <th>Watch Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Watch Url</th>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Course Function</th>
+                <th>Course Description</th>
+                <th>Course Discount Price</th>
+                <th>Course Price</th>
+                <th>Course Image</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </thead>
   
   
-                  <tbody id="product_list">
-                    <tr v-for="course in courses" :key="course.id" class="list">
+                <tbody>
+                    <tr v-for="course in courses" :key="course.id">
                       <td>{{ course.courseID }}</td>
                       <td>{{ course.courseName }}</td>
-                      <td>{{ course.quantity }}</td>
-                      <td>R {{ course.amount }}</td>
-                      <td>{{ course.Category }}</td>
-                      <td><img :src="course.courseUrl" class="card-img" :alt="course.courseName"></td>
-  
-  
-                      <td id="course_edit_button" class="list">                      
-                        <UpdateCourse/>
-                          </td>
-  
-  
-                          <td>
-                            <button type="button" @click="deleteWatch(course.courseID)">Delete</button>
-                          </td>
-                          
-                        </tr>
-                      </tbody>
+                      <td>{{ course.coursePurpose }}</td>
+                      <td>{{ course.courseDesc }}</td>
+                      <td>{{ course.discountPrice }}</td>
+                      <td>{{ course.coursePrice }}</td>
+                      <td><img :src="course.courseImage " :alt="course.courseName"></td>
+                      <td><UpdateCourse/></td>
+                      <td><button type="button" @click="deleteCourse(course.courseID)">Delete</button></td>
+                    </tr>
+                </tbody>
                       
                       
   
-                    </table>
-                  </div>
+            </table>
+        </div>
     </div>
 </template>
 
