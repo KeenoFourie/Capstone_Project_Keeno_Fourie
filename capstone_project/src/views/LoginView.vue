@@ -10,6 +10,7 @@
                 <input type="password" class="form-control" id="exampleInputPassword1" minlength="4" v-model="payload.userPassword" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
+                <router-link class="btn btn-primary" aria-current="page" to="/register">Register</router-link>
             </form>
     </div>
 </template>
