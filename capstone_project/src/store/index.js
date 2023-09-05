@@ -76,7 +76,7 @@ export default createStore({
     // login
   async login(context, payload) {
     try {
-      const { msg, token, result } = (await axios.post(`${dataUrl}user/login`, payload)).data
+      const { msg, token, result } = (await axios.post(`${dataUrl}login`, payload)).data
       if(result) {
         context.commit("setUser", {result, msg});
         cookies.set("RealUser", {token, msg, result})
@@ -101,9 +101,9 @@ export default createStore({
     }
   },
   // register
-  async addUser(context, payload) {
+  async register(context, payload) {
     try {
-      const {msg} = (await axios.post(`${dataUrl}user`, payload)).data
+      const {msg} = (await axios.post(`${dataUrl}register`, payload)).data
       if(msg) {
         sweet({
           title: "Registration",
@@ -124,6 +124,11 @@ export default createStore({
     } catch (e) {
       context.commit("setMsg", "An error has occurred");
     }
+  },
+  // delete 
+  async logOut(context) {
+    context.commit("setUser")  // helps remove logout button
+    cookies.remove('RealUser');  // removes cookie
   },
   // add appointment
   async addAppointment(context, appointmentdata) {

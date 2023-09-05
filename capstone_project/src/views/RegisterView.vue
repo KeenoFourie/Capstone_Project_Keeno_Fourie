@@ -61,7 +61,7 @@
         },
         methods: {
             registration() {
-                this.$store.dispatch("addUser", this.payload)
+                this.$store.dispatch("register", this.payload)
             }
         }
     }
