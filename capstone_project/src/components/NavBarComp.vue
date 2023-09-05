@@ -26,7 +26,7 @@
                     <li class="nav-item">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/contact_us">Contact Us</router-link>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" v-show="isAdmin">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/admin">Admin</router-link>
                     </li>
                     <li class="nav-item">
@@ -45,9 +45,23 @@
 </template>
 
 <script>
-    export default {
-        
+import { useCookies } from 'vue3-cookies'
+const { cookies } = useCookies()
+
+export default {
+    computed: {
+        user() {
+            return this.$store.state.user ||
+            cookies.get("RealUser")
+        },
+        result() {
+            return this.user?.result;
+        },
+        isAdmin() {
+            return this.result?.userRole?.toLowerCase() === "admin";
+        }
     }
+}
 </script>
 
 <style scoped>

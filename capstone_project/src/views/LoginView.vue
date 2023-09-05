@@ -1,12 +1,48 @@
 <template>
     <div>
-
+            <form @submit.prevent="login">
+                <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="payload.emailAdd" required>
+                </div>
+                <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" minlength="4" v-model="payload.userPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
     </div>
 </template>
 
 <script>
+import { useCookies } from 'vue3-cookies'
+const { cookies } = useCookies()
+
     export default {
-        
+        data() {
+            return {
+                payload: {
+                    emailAdd: "",
+                    userPassword: ""
+                }
+            }
+        },
+        computed: {
+            user() {
+                return this.$store.state.user
+            }
+        },
+        methods: {
+            login() {
+                this.$store.dispatch("login", this.payload)
+            }
+        },
+        beforeCreate() {
+            this.$store.dispatch('fetchUsers')
+        },
+        mounted() {
+            console.log(cookies.get('RealUser'));
+        },
     }
 </script>
 
