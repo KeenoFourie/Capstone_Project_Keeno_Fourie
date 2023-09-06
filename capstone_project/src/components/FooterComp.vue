@@ -18,7 +18,7 @@
                 <router-link class="links_in_footer" to="/about">Investors And Partners</router-link>
             </div>
             <div id="join_drive">
-                <a href="/login" id="button_for_join_the_drive">JOIN THE DRIVE</a>
+                <a href="/register" id="button_for_join_the_drive">JOIN THE DRIVE</a>
             </div>
             <div id="our_socials">
                 <h5 class="footer_headings">Our Socials</h5>
@@ -62,7 +62,6 @@
     justify-content: space-evenly;
     background-color: #2A2A2A;
     color: white;
-    margin-top: 2rem;
 }
 #bottom_footer {
     display: flex;
