@@ -32,6 +32,7 @@ h1 {
     display: flex;
     justify-content: left;
     background-image: url("https://images7.alphacoders.com/130/1308025.jpg");
+    background-attachment: fixed;
     background-size: 100%;
     background-repeat: no-repeat;
     padding: 4rem;

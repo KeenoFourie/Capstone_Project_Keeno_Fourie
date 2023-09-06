@@ -172,6 +172,7 @@ export default {
 }
 #landing_page_welcome {
   background-image: url("https://wallpaperaccess.com/full/804850.jpg");
+  background-attachment: fixed;
   background-size: 100%;
   color: white;
   display: flex;

@@ -37,7 +37,8 @@
 #account_page {
     display: flex;
     justify-content: center;
-    background-image: url("https://a-static.besthdwallpaper.com/beach-jogging-scenery-wallpaper-2732x768-87216_73.jpg");
+    background-image: url("https://i.postimg.cc/ZRHGSjBS/jhadvbksl-c-l.jpg");
+    background-attachment: fixed;
     background-size: 100%;
     height: 50vh;
     background-repeat: no-repeat;
