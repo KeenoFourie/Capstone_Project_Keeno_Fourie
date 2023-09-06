@@ -14,8 +14,18 @@
 </template>
 
 <script>
+import { useCookies } from 'vue3-cookies'
+const { cookies } = useCookies()
+
     export default {
-        
+        methods: {
+            login() {
+                this.$store.dispatch("login", this.payload)
+            }
+        },
+        mounted() {
+            console.log(cookies.get('RealUser'));
+        },
     }
 </script>
 

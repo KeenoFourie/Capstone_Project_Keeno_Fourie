@@ -30,7 +30,7 @@ export default createStore({
     setUsers(state, users) {
       state.users = users
     },
-    // users
+    // add user
     addUser(state, user) {
       state.user = user
     },
@@ -82,10 +82,10 @@ export default createStore({
         cookies.set("RealUser", {token, msg, result})
         authenticateUser.applyToken(token)
         sweet({
-          title: msg,
-          text: `Welcome back ${result?.firstName} ${result?.lastName}`,
-          icon: "success",
-          timer: 2500
+          title: "✅",
+          text: `Welcome back to Lift Off Life ${result?.firstName} ${result?.lastName}`,
+          timer: 2500,
+          buttons: false,
         })
         router.push({name: 'home'})
       } else {
@@ -106,10 +106,10 @@ export default createStore({
       const {msg} = (await axios.post(`${dataUrl}register`, payload)).data
       if(msg) {
         sweet({
-          title: "Registration",
+          title: "✅",
           text: msg,
-          icon: "success",
-          timer: 2000
+          timer: 2000,
+          buttons: false,
         })
         context.dispatch('fetchUsers')
         router.push({name: 'login'})
