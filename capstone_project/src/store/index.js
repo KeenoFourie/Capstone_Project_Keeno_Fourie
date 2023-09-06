@@ -85,7 +85,7 @@ export default createStore({
           title: msg,
           text: `Welcome back ${result?.firstName} ${result?.lastName}`,
           icon: "success",
-          timer: 2000
+          timer: 2500
         })
         router.push({name: 'home'})
       } else {
