@@ -89,6 +89,8 @@ label {
 #styling {
     height: 90vh;
     background-image: url("https://i.postimg.cc/YSWZJ7Qc/kghjvgchfigd.jpg");
+    background-attachment: fixed;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;

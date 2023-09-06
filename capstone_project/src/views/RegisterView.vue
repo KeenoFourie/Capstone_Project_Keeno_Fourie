@@ -110,6 +110,7 @@ label {
 #styling {
   height: 120vh;
   background-image: url("https://i.postimg.cc/YSWZJ7Qc/kghjvgchfigd.jpg");
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   display: flex;

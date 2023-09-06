@@ -7,10 +7,10 @@
                 <h4>{{course.coursePurpose}}</h4>   
                 <div id="line"></div>
                 <h5>{{course.courseDesc}}</h5>
-                <button id="price">
+                <router-link to="/cart" id="price">
                     <h6>R{{course.coursePrice}}</h6>
                     <h4>R{{course.discountPrice}}</h4>
-                </button>
+                </router-link>
             </div>
         </div>
     </div>
@@ -36,6 +36,8 @@ export default {
     align-self: center;
     align-items: center;
     margin: 2rem;
+    text-decoration: none;
+    color: black;
     padding: 0.3rem;
     border: none;
     background-color: yellow;

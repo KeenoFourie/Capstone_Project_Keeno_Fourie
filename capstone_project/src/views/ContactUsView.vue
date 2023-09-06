@@ -90,6 +90,7 @@ h1 {
     display: flex;
     justify-content: center;
     background-image: url("https://images5.alphacoders.com/107/1077900.jpg");
+    background-attachment: fixed;
     background-size: 100%;
     background-repeat: no-repeat;
     padding: 4rem;
