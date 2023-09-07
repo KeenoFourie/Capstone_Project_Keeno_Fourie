@@ -110,6 +110,9 @@ methods: {
   }
 </script>
 <style scoped>
+form {
+  margin-bottom: 2rem;
+}
 h2 {
     color: black;
     padding: 1.5rem;
