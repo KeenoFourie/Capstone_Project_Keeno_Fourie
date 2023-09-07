@@ -156,6 +156,9 @@ export default {
   padding-top: 3rem;
   padding-bottom: 1rem;
 }
+#asked_questions {
+  margin-bottom: 2rem;
+}
 #structure_welcome_text {
   width: 100%;
   display: flex;

@@ -196,6 +196,9 @@
 </script>
 
 <style scoped>
+#about_page {
+  margin-bottom: 2rem;
+}
 .partner_text {
   text-align: left;
   padding: 2rem;
