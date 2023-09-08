@@ -18,6 +18,8 @@ export default createStore({
     user: null,
     // courses
     courses: null,
+    // appointments
+    appointments: null,
     // cookies
     token: null,
     // msg
@@ -26,13 +28,17 @@ export default createStore({
   getters: {
   },
   mutations: {
-    // users
-    setUsers(state, users) {
-      state.users = users
-    },
     // add user
     addUser(state, user) {
       state.user = user
+    },
+    // add appointment
+    addAppointment(state, newAppointment) {
+      state.appointments.push(newAppointment);
+    },
+    // view more
+    setCourse(state, course) {
+      state.course = course;
     },
     // user
     setUser(state, user) {
@@ -42,17 +48,25 @@ export default createStore({
     setCourses(state, courses) {
       state.courses = courses
     },
+    // appointments
+    setAppointments(state, appointments) {
+      state.appointments = appointments
+    },
+    // users
+    setUsers(state, users) {
+      state.users = users
+    },
     // delete button courses
     deleteCourse(state, courseID) {
       state.courses = state.courses.filter(course => course.courseID !== courseID);
     },
-    // view more
-    setCourse(state, course) {
-      state.course = course;
+    // delete button appointments
+    deleteAppointment(state, appointID) {
+      state.appointments = state.appointments.filter(appointment => appointment.appointID !== appointID);
     },
-    // add appointment
-    addAppointment(state, newAppointment) {
-      state.appointments.push(newAppointment);
+    // delete button users
+    deleteUser(state, userID) {
+      state.users = state.users.filter(user => user.userID !== userID);
     },
     // cookies
     setToken(state, token) {
@@ -64,19 +78,10 @@ export default createStore({
     },
   },
   actions: {
-    // users
-  async fetchUsers(context) {
-    try {
-      const { data } = (await axios.get(`${dataUrl}user`)).data
-      context.commit("setUsers", data.results);
-    } catch (e) {
-      context.commit("setMsg", "An error has occurred")
-    }
-  },
     // login
-  async login(context, payload) {
-    try {
-      const { msg, token, result } = (await axios.post(`${dataUrl}login`, payload)).data
+    async login(context, payload) {
+      try {
+        const { msg, token, result } = (await axios.post(`${dataUrl}login`, payload)).data
       if(result) {
         context.commit("setUser", {result, msg});
         cookies.set("RealUser", {token, msg, result})
@@ -148,11 +153,101 @@ export default createStore({
       context.commit("setMsg", "An error has occurred")
     }
   },
+  // appointments
+  async fetchAppointments(context) {
+    try {
+      const { data } = await axios.get(`${dataUrl}appointments`);
+      context.commit("setAppointments", data.results);
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred")
+    }
+  },
+  // users
+  async fetchUsers(context) {
+    try {
+      const { data } = await axios.get(`${dataUrl}users`);
+      context.commit("setUsers", data.results);
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred")
+    }
+  },
+  // user
+async fetchUser(context) {
+  try {
+    const { data } = (await axios.get(`${dataUrl}user`)).data
+    context.commit("setUser", data.results);
+  } catch (e) {
+    context.commit("setMsg", "An error has occurred")
+  }
+},
   // delete button courses
   async deleteCourse(context, courseID) {
     try {
       await axios.delete(`${dataUrl}course/${courseID}`);
       context.commit("deleteCourse", courseID);
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred");
+    }
+  },
+  // delete button appointments
+  async deleteAppointment(context, appointID) {
+    try {
+      await axios.delete(`${dataUrl}appointment/${appointID}`);
+      context.commit("deleteAppointment", appointID);
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred");
+    }
+  },
+  // delete button users
+  async deleteUser(context, userID) {
+    try {
+      await axios.delete(`${dataUrl}user/${userID}`);
+      context.commit("deleteUser", userID);
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred");
+    }
+  },
+   // update course
+   async updatedCourse(context, editedCourse) {
+    try {
+      const { data } = await axios.patch(
+        `${dataUrl}course/${editedCourse.courseID}`,
+        editedCourse
+      );
+      const { msg } = await data;
+      if (msg) {
+        context.commit("setMsg", msg);
+      }
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred");
+    }
+  },
+   // update appointment
+   async updatedAppointment(context, editedAppointment) {
+    try {
+      const { data } = await axios.patch(
+        `${dataUrl}appointment/${editedAppointment.appointID}`,
+        editedAppointment
+      );
+      const { msg } = await data;
+      if (msg) {
+        context.commit("setMsg", msg);
+      }
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred");
+    }
+  },
+   // update appointment
+   async updatedUser(context, editedUser) {
+    try {
+      const { data } = await axios.patch(
+        `${dataUrl}user/${editedUser.userID}`,
+        editedUser
+      );
+      const { msg } = await data;
+      if (msg) {
+        context.commit("setMsg", msg);
+      }
     } catch (e) {
       context.commit("setMsg", "An error has occurred");
     }

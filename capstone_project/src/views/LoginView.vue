@@ -44,7 +44,7 @@ const { cookies } = useCookies()
             }
         },
         beforeCreate() {
-            this.$store.dispatch('fetchUsers')
+            this.$store.dispatch('fetchUser')
         },
         mounted() {
             console.log(cookies.get('RealUser'));
