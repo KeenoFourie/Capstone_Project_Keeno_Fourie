@@ -1,9 +1,23 @@
 <template>
-    <div>
+  <div>
+      <h1>Courses...</h1>
+
+      <div id="search_sort_filter_buttons">
+        <div id="sort">
+          <!-- sort -->
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sort</a>
+              <ul class="dropdown-menu">
+                <li><router-link class="dropdown-item" to="/price_low">Price (Lowest-Highest)</router-link></li>
+                <li><router-link class="dropdown-item" to="/price_high">Price (Highest-Lowest)</router-link></li>
+                <li><router-link class="dropdown-item" to="/price_high">Alphabetical</router-link></li>
+              </ul>
+            </div>
+        </div>
+      </div>
 
       <AddCourse/>
 
-      <h1>Courses...</h1>
          <!-- table for courses-->
          <div v-if="courses" class="container-fluid" id="table_position">
             <table class="container-fluid-2">
