@@ -25,7 +25,7 @@
                 <input type="course_Description" class="form-control" id="exampleDropdown" v-model="editedCourse.courseDesc" placeholder="Course Description..." required oninvalid="this.setCustomValidity('Please Enter A Course Description')" oninput="this.setCustomValidity('')">
               </div>
             <div class="mb">
-                <input type="course_Discount_Price" class="form-control" id="exampleDropdown" v-model="editedCourse.discountPrice" placeholder="Course Price..." required oninvalid="this.setCustomValidity('Please Enter A Course Discount Price')" oninput="this.setCustomValidity('')">
+                <input type="course_Discount_Price" class="form-control" id="exampleDropdown" v-model="editedCourse.discountPrice" placeholder="Course Discount Price..." required oninvalid="this.setCustomValidity('Please Enter A Course Discount Price')" oninput="this.setCustomValidity('')">
               </div>
             <div class="mb">
                 <input type="course_Price" class="form-control" id="exampleDropdown" v-model="editedCourse.coursePrice" placeholder="Course Price..." required oninvalid="this.setCustomValidity('Please Enter A Course Price')" oninput="this.setCustomValidity('')">

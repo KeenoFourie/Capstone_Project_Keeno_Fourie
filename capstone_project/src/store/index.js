@@ -36,6 +36,10 @@ export default createStore({
     addAppointment(state, newAppointment) {
       state.appointments.push(newAppointment);
     },
+    // add course
+    addCourse(state, newCourse) {
+      state.courses.push(newCourse);
+    },
     // view more
     setCourse(state, course) {
       state.course = course;
@@ -140,6 +144,15 @@ export default createStore({
     try {
       await axios.post(`${dataUrl}appointment`, appointmentdata);
       context.commit("addAppointment", appointmentdata);
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred");
+    }
+  },
+  // add course
+  async addCourse(context, coursedata) {
+    try {
+      await axios.post(`${dataUrl}course`, coursedata);
+      context.commit("addCourse", coursedata);
     } catch (e) {
       context.commit("setMsg", "An error has occurred");
     }
