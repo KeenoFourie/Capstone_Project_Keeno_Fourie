@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal57">+ Course</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal57" id="plus_course">+ Course</button>
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal57" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -79,7 +79,7 @@ methods: {
 </script>
 
 <style scoped>
-button {
+#plus_course {
     position: absolute;
     right: 4rem;
     top: 10rem;
