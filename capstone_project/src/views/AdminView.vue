@@ -1,6 +1,8 @@
 <template>
     <div>
 
+      <AddCourse/>
+
       <h1>Courses...</h1>
          <!-- table for courses-->
          <div v-if="courses" class="container-fluid" id="table_position">
@@ -137,13 +139,15 @@
 import UpdateCourse from '@/components/UpdateCourse.vue';
 import UpdateAppointment from '../components/UpdateAppointment.vue';
 import UpdateUser from '../components/UpdateUser.vue';
+import AddCourse from '../components/AddCourse.vue';
 
 
 export default {
   components: {
     UpdateCourse,
     UpdateAppointment,
-    UpdateUser
+    UpdateUser,
+    AddCourse
 },
     computed: {
       courses() {
