@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-// import { useCookies } from 'vue3-cookies'
-// const { cookies } = useCookies()
+import { useCookies } from 'vue3-cookies'
+const { cookies } = useCookies()
 
 
 const routes = [
@@ -9,11 +9,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    // beforeEnter() {
-    //   if(!cookies.get('RealUser')) {
-    //     router.push({name: 'login'});
-    //   }
-    // }
+    beforeEnter() {
+      if(!cookies.get('RealUser')) {
+        router.push({name: 'login'});
+      }
+    }
   },
   {
     path: '/about',
@@ -37,7 +37,7 @@ const routes = [
   },
   {
     path: '/cart',
-    name: 'cart',
+    name: 'addtocart',
     component: () => import('../views/CartView.vue')
   },
   {
