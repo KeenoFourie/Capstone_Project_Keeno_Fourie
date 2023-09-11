@@ -7,7 +7,7 @@ class Cart {
 
 fetchCarts(req, res) {
   const query = `
-  SELECT cartID, courseID, courseName, coursePurpose, courseDesc, discountPrice, coursePrice, courseImage, orderDate
+  SELECT courseID, courseName, coursePurpose, courseDesc, discountPrice, coursePrice, courseImage
   FROM Cart;
   `;
 
@@ -42,7 +42,7 @@ async addToCart(req, res) {
 deleteFromCart(req, res) {
   const query = `
   DELETE FROM Cart
-  WHERE cartID = ${req.params.id};
+  WHERE courseID = ${req.params.id};
   `;
 
   db.query(query, (err) => {
