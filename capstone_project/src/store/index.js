@@ -18,6 +18,8 @@ export default createStore({
     user: null,
     // courses
     courses: null,
+    // cart
+    cart: [],
     // appointments
     appointments: null,
     // cookies
@@ -40,6 +42,10 @@ export default createStore({
     addCourse(state, newCourse) {
       state.courses.push(newCourse);
     },
+    // add course
+    addToCart(state, newCart) {
+      state.cart.push(newCart);
+    },
     // view more
     setCourse(state, course) {
       state.course = course;
@@ -51,6 +57,10 @@ export default createStore({
     // courses
     setCourses(state, courses) {
       state.courses = courses
+    },
+    // cart
+    setCart(state, course) {
+      state.cart = course
     },
     // appointments
     setAppointments(state, appointments) {
@@ -157,11 +167,24 @@ export default createStore({
       context.commit("setMsg", "An error has occurred");
     }
   },
+  // add to cart
+  addToCart({ commit }, course) {
+    commit('addToCart', course);
+  },
   // courses
   async fetchCourses(context) {
     try {
       const { data } = await axios.get(`${dataUrl}courses`);
       context.commit("setCourses", data.results);
+    } catch (e) {
+      context.commit("setMsg", "An error has occurred")
+    }
+  },
+  // courses
+  async fetchCarts(context) {
+    try {
+      const { data } = await axios.get(`${dataUrl}carts`);
+      context.commit("setCart", data.results);
     } catch (e) {
       context.commit("setMsg", "An error has occurred")
     }
