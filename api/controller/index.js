@@ -80,6 +80,10 @@ routes.get("/carts", (req, res) => {
   courses.fetchCarts(req, res);
 });
 
+// routes.get("/cart/:id", (req, res) => {
+//   courses.fetchCart(req, res);
+// });
+
 routes.post("/cart", bodyParser.json(), (req, res) => {
   courses.addToCart(req, res);
 });
