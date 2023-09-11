@@ -74,5 +74,19 @@ routes.delete("/course/:id", (req, res) => {
   courses.deleteCourse(req, res);
 });
 
+// cart 
+
+routes.get("/carts", (req, res) => {
+  courses.fetchCarts(req, res);
+});
+
+routes.post("/cart", bodyParser.json(), (req, res) => {
+  courses.addToCart(req, res);
+});
+
+routes.delete("/cart/:id", (req, res) => {
+  courses.deleteFromCart(req, res);
+});
+
 // export
 module.exports = {express, routes};
