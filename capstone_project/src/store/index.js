@@ -43,8 +43,8 @@ export default createStore({
       state.courses.push(newCourse);
     },
     // add course
-    addToCart(state, newCart) {
-      state.cart.push(newCart);
+    addToCart(state, course) {
+      state.cart.push(course);
     },
     // view more
     setCourse(state, course) {
