@@ -23,11 +23,6 @@ const { cookies } = useCookies()
                 return this.$store.state.user || cookies.get("RealUser").result;
             }
         },
-        methods: {
-            login() {
-                this.$store.dispatch("login", this.payload)
-            }
-        },
         mounted() {
             console.log(cookies.get('RealUser'));
         },
