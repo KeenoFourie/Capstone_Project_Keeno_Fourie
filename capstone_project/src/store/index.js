@@ -7,6 +7,7 @@ const {cookies} = useCookies()
 import authenticateUser from '@/services/AuthenticateUser';
 
 
+
 const dataUrl = "https://capstone-project-keeno-fourie-api.onrender.com/";
 
 
@@ -28,6 +29,12 @@ export default createStore({
     msg: null,
   },
   getters: {
+    getTotal(state) {
+      return state.cart.reduce((total, item) => {
+        const sumOfItems = item.discountPrice || 0;
+        return total + sumOfItems;
+      }, 0);
+    },
   },
   mutations: {
     // add user
@@ -42,9 +49,10 @@ export default createStore({
     addCourse(state, newCourse) {
       state.courses.push(newCourse);
     },
-    // add course
+    // add to cart
     addToCart(state, course) {
       state.cart.push(course);
+      localStorage.setItem('cart', JSON.stringify(state.cart))
     },
     // view more
     setCourse(state, course) {
@@ -168,8 +176,8 @@ export default createStore({
     }
   },
   // add to cart
-  addToCart({ commit }, course) {
-    commit('addToCart', course);
+  addCart(context, course) {
+    context.commit('addToCart', course);
   },
   // courses
   async fetchCourses(context) {
@@ -183,8 +191,8 @@ export default createStore({
   // courses
   async fetchCarts(context) {
     try {
-      const { data } = await axios.get(`${dataUrl}carts`);
-      context.commit("setCart", data.results);
+      const cartdata = JSON.parse(localStorage.getItem('cart'));
+      this.$store.commit('setCart', cartdata);
     } catch (e) {
       context.commit("setMsg", "An error has occurred")
     }
@@ -273,7 +281,7 @@ async fetchUser(context) {
       context.commit("setMsg", "An error has occurred");
     }
   },
-   // update appointment
+   // update user
    async updatedUser(context, editedUser) {
     try {
       const { data } = await axios.patch(
