@@ -86,16 +86,6 @@ const routes = [
     component: () => import('../views/Question_3View.vue')
   },
   {
-    path: '/question_4',
-    name: 'question_4',
-    component: () => import('../views/Question_4View.vue')
-  },
-  {
-    path: '/question_5',
-    name: 'question_5',
-    component: () => import('../views/Question_5View.vue')
-  },
-  {
     path: "/course/:courseID",
     name: "singlecourse",
     props: true,
