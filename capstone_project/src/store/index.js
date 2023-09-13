@@ -101,6 +101,15 @@ export default createStore({
   },
   actions: {
     // price: low to high
+    async Alphabetically(context) {
+      try {
+        const { data } = await axios.get(`${dataUrl}courses/alphabetical`);
+        context.commit("setCourses", data.results);
+      } catch (e) {
+        context.commit("setMsg", "An error has occurred");
+      }
+    },
+    // price: low to high
     async fetchPriceLowToHigh(context) {
       try {
         const { data } = await axios.get(`${dataUrl}courses/price_low`);

@@ -22,6 +22,11 @@
     </div>
   </div>
 
+  <form action="/search" method="get">
+    <input type="text" name="q" placeholder="Enter your search query">
+    <input type="submit" value="Search">
+  </form>
+
 
 
 
