@@ -109,8 +109,7 @@ export default createStore({
         cookies.set("RealUser", {token, msg, result})
         authenticateUser.applyToken(token)
         sweet({
-          title: "✅",
-          text: `Welcome back to Lift Off Life ${result?.firstName} ${result?.lastName}`,
+          text: `Logged In`,
           timer: 2500,
           buttons: false,
         })
@@ -133,13 +132,11 @@ export default createStore({
       const {msg} = (await axios.post(`${dataUrl}register`, payload)).data
       if(msg) {
         sweet({
-          title: "✅",
-          text: msg,
+          text: "Registered",
           timer: 2000,
           buttons: false,
         })
         context.dispatch('fetchUsers')
-        router.push({name: 'login'})
       } else {
         sweet({
           title: "Error",
@@ -169,8 +166,22 @@ export default createStore({
   // add course
   async addCourse(context, coursedata) {
     try {
-      await axios.post(`${dataUrl}course`, coursedata);
+      const {msg} = await axios.post(`${dataUrl}course`, coursedata);
       context.commit("addCourse", coursedata);
+      if(msg) {
+        sweet({
+          title: "Error",
+          text: msg,
+          icon: "error",
+          timer: 2000
+        })
+      } else {
+        sweet({
+          text: `Added Course`,
+          timer: 2000,
+          buttons: false,
+        })
+      }
     } catch (e) {
       context.commit("setMsg", "An error has occurred");
     }

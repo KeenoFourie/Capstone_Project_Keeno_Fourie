@@ -1,5 +1,5 @@
 <template>
-    <div  :user="user" :key="user.userID">
+    <div :user="user" :key="user.userID">
         <div id="account_page">
 
         </div>
