@@ -1,50 +1,45 @@
 <template>
-    <div id="edit_user">
-
-        <h1>Profile...</h1>
-
-        <div class="modal-body">
-            <div class="mb">
-                <input type="course_ID" class="form-control" v-model="editedUser.userID" placeholder="User ID..." required oninvalid="this.setCustomValidity('Please Enter A Appointment ID')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Name" class="form-control" v-model="editedUser.firstName" placeholder="Name..." required oninvalid="this.setCustomValidity('Please Enter Your Name')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Target" class="form-control" v-model="editedUser.lastName" placeholder="Surname..." required oninvalid="this.setCustomValidity('Please Enter Your Surname')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Description" class="form-control" v-model="editedUser.userAge" placeholder="Age..." required oninvalid="this.setCustomValidity('Please Enter Your Age')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Discount_Price" class="form-control" v-model="editedUser.gender" placeholder="Gender..." required oninvalid="this.setCustomValidity('Please Enter Your Gender')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Price" class="form-control" v-model="editedUser.maritalStatus" placeholder="Marital Status..." required oninvalid="this.setCustomValidity('Please Enter A Marital Status')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Image" class="form-control" v-model="editedUser.emailAdd" placeholder="Email Address..." required oninvalid="this.setCustomValidity('Please Enter An Email Address')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Image" class="form-control" v-model="editedUser.cellNumber" placeholder="Cellphone Number..." required oninvalid="this.setCustomValidity('Please Enter A Cellphone Number')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Image" class="form-control" v-model="editedUser.userProfile" placeholder="User Profile..." required oninvalid="this.setCustomValidity('Please Enter A Appointment Time')" oninput="this.setCustomValidity('')">
-              </div>
-            <div class="mb">
-                <input type="course_Image" class="form-control" v-model="editedUser.userRole" placeholder="User Role..." required oninvalid="this.setCustomValidity('Please Enter Your Weight')" oninput="this.setCustomValidity('')">
-              </div>
-        </div>
-        <div class="modal-footer">
-            <router-link class="btn" aria-current="page" to="/account">Back</router-link>
-            <button type="button" class="btn" @click.prevent="updatedUser" data-bs-dismiss="modal">Edit</button>
-        </div>
+  <div>
+    <h1>Edit Your Profile...</h1>
+    <div class="mb">
+      <input type="text" v-model="editedUser.userID" placeholder="User ID..." required>
     </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.firstName" placeholder="Name..." required>
+    </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.lastName" placeholder="Surname..." required>
+    </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.userAge" placeholder="Age..." required>
+    </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.gender" placeholder="Gender..." required>
+    </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.maritalStatus" placeholder="Marital Status..." required>
+    </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.emailAdd" placeholder="Email Address..." required>
+    </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.cellNumber" placeholder="Cellphone Number..." required>
+    </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.userProfile" placeholder="User Image..." required>
+    </div>
+    <div class="mb">
+      <input type="text" v-model="editedUser.userRole" placeholder="User Role..." required>
+    </div>
+    <div>
+      <button type="button" class="btn" @click="updateUser">Save changes</button>
+    </div>
+  </div>
 </template>
 
 <script>
-    export default {
-      data() {
+export default {
+  data() {
     return {
       editedUser: {
         userID: "",
@@ -57,61 +52,56 @@
         cellNumber: "",
         userProfile: "",
         userRole: "",
-        }
       }
-    },
-      methods: {
-        updatedUser() {
-        this.$store.dispatch("updatedUser", this.editedUser);
-        setTimeout(this.fetchUsers, 1000);
-    },
-    fetchUsers() {
-        this.$store.dispatch("fetchUsers")
-    },
-}
+    }
+  },
+  methods: {
+    updateUser() {
+      this.$store.dispatch("updatedUser", this.editedUser);
+
+      // Clear inputs
+      this.editedUser = {
+        userID: "",
+        firstName: "",
+        lastName: "",
+        userAge: "",
+        gender: "",
+        maritalStatus: "",
+        emailAdd: "",
+        cellNumber: "",
+        userProfile: "",
+        userRole: "",
+      };
+    }
+  }
 }
 </script>
 
 <style scoped>
-.btn {
-    color: grey;
-    text-decoration: none;
-    background-color: yellow;
-    border-radius: 0rem;
-    padding: 0.5rem;
-    padding-inline: 3rem;
-    margin: 1rem 5rem 1rem;
-}
-.btn:hover {
-    color: yellow;
-    text-decoration: none;
-    background-color: grey;
-    border: none;
-}
 h1 {
-    color: black;
-    margin: 1rem;
+  color: black;
+  margin: 1rem;
 }
-#edit_user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+button {
+  border-radius: 0rem;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: #464646;
+  background-color: yellow;
+  padding: 0.8rem;
+  text-shadow: none;
+}
+button:hover {
+  color: yellow;
+  background-color: #464646;
 }
 .mb {
-    width: 100%;
-}
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: auto;
+  margin-bottom: 0.5rem;
 }
 input {
   border: 1px solid black;
   border-radius: 0rem;
-}
-input {
-    margin-bottom: 0.5rem;
+  width: 50%;
+  height: 2rem;
 }
 </style>

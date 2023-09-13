@@ -36,10 +36,10 @@
                 <input type="course_Image" class="form-control" id="exampleDropdown" v-model="editedUser.cellNumber" placeholder="Cellphone Number..." required oninvalid="this.setCustomValidity('Please Enter A Cellphone Number')" oninput="this.setCustomValidity('')">
               </div>
             <div class="mb">
-                <input type="course_Image" class="form-control" id="exampleDropdown" v-model="editedUser.userProfile" placeholder="Appointment Time..." required oninvalid="this.setCustomValidity('Please Enter A Appointment Time')" oninput="this.setCustomValidity('')">
+                <input type="course_Image" class="form-control" id="exampleDropdown" v-model="editedUser.userProfile" placeholder="User Image..." required oninvalid="this.setCustomValidity('Please Enter A Appointment Time')" oninput="this.setCustomValidity('')">
               </div>
             <div class="mb">
-                <input type="course_Image" class="form-control" id="exampleDropdown" v-model="editedUser.userRole" placeholder="Weight in kg..." required oninvalid="this.setCustomValidity('Please Enter Your Weight')" oninput="this.setCustomValidity('')">
+                <input type="course_Image" class="form-control" id="exampleDropdown" v-model="editedUser.userRole" placeholder="User Role..." required oninvalid="this.setCustomValidity('Please Enter Your Weight')" oninput="this.setCustomValidity('')">
               </div>
         </div>
         <div class="modal-footer">
@@ -72,6 +72,19 @@
       methods: {
         updatedUser() {
         this.$store.dispatch("updatedUser", this.editedUser);
+        // clears all the inputs
+        this.editedUser = {
+          userID: "",
+          firstName: "",
+          lastName: "",
+          userAge: "",
+          gender: "",
+          maritalStatus: "",
+          emailAdd: "",
+          cellNumber: "",
+          userProfile: "",
+          userRole: "",
+        }
         setTimeout(this.fetchUsers, 1000);
     },
     fetchUsers() {

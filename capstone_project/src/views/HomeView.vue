@@ -56,16 +56,6 @@
         <div class="button_q_and_a">
           <router-link class="questions" aria-current="page" to="/question_3">Where do you conduct training sessions? Do you offer both in-person and online training?</router-link>
         </div>
-        
-        <!-- question 4 -->
-        <div class="button_q_and_a">
-          <router-link class="questions" aria-current="page" to="/question_4">Can you customize a fitness plan for my specific needs and goals?</router-link>
-        </div>
-        
-        <!-- question 5 -->
-        <div class="button_q_and_a">
-          <router-link class="questions" aria-current="page" to="/question_5">What are your qualifications and certifications as a personal trainer?</router-link>
-        </div>
 
         
 
@@ -195,5 +185,10 @@ export default {
   background-color: yellow;
   padding: 0.8rem;
   text-shadow: none;
+}
+#join_button:hover {
+  color: yellow;
+  background-color: #464646;
+  border: none;
 }
 </style>
