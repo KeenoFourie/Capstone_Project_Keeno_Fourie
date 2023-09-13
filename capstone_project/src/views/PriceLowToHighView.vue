@@ -23,11 +23,7 @@
   </div>
 
 
-
-
-
-
-
+<!-- card display -->
 
 
          <div id="courses_displaying">
@@ -47,16 +43,17 @@
     </div>
 </template>
 
+
 <script>
 export default {
-    computed: {
-      courses() {
-          return this.$store.state.courses
-      }
+  computed: {
+    courses() {
+      return this.$store.state.courses;
+    },
   },
-      mounted() {
-          this.$store.dispatch('fetchCourses')
-      }
+  mounted() {
+    this.$store.dispatch("fetchPriceLowToHigh");
+  },
 };
 </script>
 

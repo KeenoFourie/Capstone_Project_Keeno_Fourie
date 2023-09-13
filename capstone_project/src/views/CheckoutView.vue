@@ -35,7 +35,6 @@ export default {
   },
   mounted() {
     this.totalPrice = parseFloat(this.$route.query.totalPrice) || 0;
-    console.log('Total Price:', this.totalPrice);
   },
   methods: {
     payNow() {
