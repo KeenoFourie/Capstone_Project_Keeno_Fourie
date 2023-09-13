@@ -96,6 +96,9 @@ img {
 .btn:hover {
   color: black;
 }
+tbody {
+  height: 50vh;
+}
 #price {
   padding: 0.5rem;
 }

@@ -21,6 +21,21 @@ const routes = [
     component: () => import('../views/AboutView.vue')
   },
   {
+    path: '/price_low',
+    name: 'price_low',
+    component: () => import('../views/PriceLowToHighView.vue')
+  },
+  {
+    path: '/price_high',
+    name: 'price_high',
+    component: () => import('../views/PriceHighToLowView.vue')
+  },
+  {
+    path: '/alphabetical',
+    name: 'alphabetical',
+    component: () => import('../views/AlphabeticalOrderView.vue')
+  },
+  {
     path: '/profile',
     name: 'profile',
     component: () => import('../views/ProfileView.vue')
