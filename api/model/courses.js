@@ -85,6 +85,62 @@ deleteCourse(req, res) {
     });
   });
 }
+
+
+sortAlphabetically(req, res) {
+  const query = `
+      SELECT courseID, courseName, coursePurpose, courseDesc, discountPrice, coursePrice, courseImage
+      FROM Courses
+      ORDER BY courseName;
+      `;
+
+  db.query(query, (err, results) => {
+    if (err) throw err;
+    res.json({
+      status: res.statusCode,
+      results,
+      msg: "Courses Are Sorted In Ascending Order By Name.",
+    });
+  });
+}
+
+
+sortPriceLowToHigh(req, res) {
+  const query = `
+    SELECT courseID, courseName, coursePurpose, courseDesc, discountPrice, coursePrice, courseImage
+    FROM Courses
+    ORDER BY discountPrice;
+      `;
+      
+  db.query(query, (err, results) => {
+    if (err) throw err;
+    res.json({
+      status: res.statusCode,
+      results,
+      msg: "Courses Are Sorted From Lowest To Highest",
+    });
+  });
+}
+
+
+sortPriceHighToLow(req, res) {
+  const query = `
+    SELECT courseID, courseName, coursePurpose, courseDesc, discountPrice, coursePrice, courseImage
+    FROM Courses
+    ORDER BY discountPrice DESC;
+      `;
+
+  db.query(query, (err, results) => {
+    if (err) throw err;
+    res.json({
+      status: res.statusCode,
+      results,
+      msg: "Courses Are Sorted From Highest To Lowest",
+    });
+  });
+}
+
+
 }
 
 module.exports = Courses;

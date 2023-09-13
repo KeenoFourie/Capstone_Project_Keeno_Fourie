@@ -74,6 +74,20 @@ routes.delete("/course/:id", (req, res) => {
   courses.deleteCourse(req, res);
 });
 
+// sort
+
+routes.get("/courses/alphabetical", (req, res) => {
+  courses.sortAlphabetically(req, res);
+});
+
+routes.get("/courses/price_low", (req, res) => {
+  courses.sortPriceLowToHigh(req, res);
+});
+
+routes.get("/courses/price_high", (req, res) => {
+  courses.sortPriceHighToLow(req, res);
+});
+
 // cart 
 
 routes.get("/carts", (req, res) => {
