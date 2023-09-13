@@ -20,7 +20,7 @@ const { cookies } = useCookies()
     export default {
         computed: {
             user() {
-                return this.$store.state.user || cookies.get("RealUser").result;
+                return cookies.get("RealUser").result || this.$store.state.user
             }
         },
         mounted() {
