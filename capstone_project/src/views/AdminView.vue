@@ -106,6 +106,8 @@
        
        
         <h1>Users...</h1>
+
+        <AddUser/>
          <!-- table for users-->
          <div v-if="users" class="container-fluid" id="table_position">
             <table class="container-fluid-2">
@@ -154,6 +156,7 @@ import UpdateCourse from '@/components/UpdateCourse.vue';
 import UpdateAppointment from '../components/UpdateAppointment.vue';
 import UpdateUser from '../components/UpdateUser.vue';
 import AddCourse from '../components/AddCourse.vue';
+import AddUser from '../components/AddUser.vue';
 
 
 export default {
@@ -161,7 +164,8 @@ export default {
     UpdateCourse,
     UpdateAppointment,
     UpdateUser,
-    AddCourse
+    AddCourse,
+    AddUser
 },
     computed: {
       courses() {

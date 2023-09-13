@@ -33,7 +33,7 @@
         </div>
         <!--  -->
         <div class="modal-footer">
-          <button type="button" class="btn" @click.prevent="addCourse" data-bs-dismiss="modal">Add</button>
+          <button type="button" class="btn" @click.prevent="addCourse" data-bs-dismiss="modal">Add Course</button>
         </div>
       </div>
     </div>
