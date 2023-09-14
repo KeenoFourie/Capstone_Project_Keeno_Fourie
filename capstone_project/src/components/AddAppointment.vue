@@ -142,4 +142,14 @@ input {
     padding: 0.5rem;
     border-radius: 0rem;
 }
+
+
+
+@media (width< 500px) {
+  label {
+    display: none;
+  }
+}
+
+
 </style>

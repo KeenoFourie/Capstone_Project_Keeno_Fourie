@@ -50,7 +50,7 @@ export default {
         maritalStatus: "",
         emailAdd: "",
         cellNumber: "",
-        userProfile: "",
+        userProfile: "https://i.postimg.cc/j5xPwv35/profile-image.webp",
         userRole: "",
       }
     }
@@ -104,4 +104,6 @@ input {
   width: 50%;
   height: 2rem;
 }
+
+
 </style>

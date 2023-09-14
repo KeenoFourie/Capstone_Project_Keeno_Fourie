@@ -104,4 +104,39 @@ h1 {
     display: flex;
     flex-direction: column;
 }
+
+
+
+
+@media (width< 1000px) {
+    #contact_page {
+        display: none;
+    }
+    #contact_form {
+        display: contents;        
+    }
+    form {
+        height: 80vh;
+        background-image: url("https://images5.alphacoders.com/107/1077900.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+  }
+
+
+  @media (width< 700px) {
+    #form {
+        display: flex;
+        flex-direction: column;
+    }
+    form {
+        padding: 2rem;
+    }
+  }
+
+
+
+
+
+
 </style>

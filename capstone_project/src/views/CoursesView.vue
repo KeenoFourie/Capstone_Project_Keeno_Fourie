@@ -20,12 +20,16 @@
           </ul>
         </div>
     </div>
+
+
+
+    <form action="/search" method="get">
+      <input type="text" name="q" placeholder="Search...">
+    </form>
+
+
   </div>
 
-  <form action="/search" method="get">
-    <input type="text" name="q" placeholder="Enter your search query">
-    <input type="submit" value="Search">
-  </form>
 
 
 
@@ -66,6 +70,11 @@ export default {
 </script>
 
 <style scoped>
+#search_sort_filter_buttons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
 #heading_displayed_courses {
     color: black;
     padding: 2rem;
@@ -113,4 +122,24 @@ export default {
     margin: 2rem;
     border: none;
 }
+
+
+
+
+
+
+
+@media (width< 350px) {
+    #search_sort_filter_buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+    }
+  }
+
+
+
+
+
 </style>

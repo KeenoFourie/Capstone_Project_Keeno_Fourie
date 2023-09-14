@@ -12,7 +12,7 @@
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link id="navbar_links" class="nav-link" aria-current="page" to="/about">About Us</router-link>
+                        <router-link id="navbar_links" class="nav-link" aria-current="page" to="/about">About</router-link>
                     </li>
                     <li class="nav-item" v-show="isAdmin || isUser">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/appointments">Appointments</router-link>
@@ -24,14 +24,14 @@
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/courses">Courses</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link id="navbar_links" class="nav-link" aria-current="page" to="/contact_us">Contact Us</router-link>
+                        <router-link id="navbar_links" class="nav-link" aria-current="page" to="/contact_us">Contact</router-link>
                     </li>
                     <li class="nav-item" v-show="isAdmin">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/admin">Admin</router-link>
                     </li>
-                    <li class="nav-item" v-show="isAdmin || isUser" :user="userr" :key="userr.userID">
+                    <li class="nav-item" v-show="isAdmin || isUser">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/account">
-                            <img id="account_profile" :src="userr.userProfile" :alt="userr.firstName">
+                            ok
                         </router-link>
                     </li>
                     <li class="nav-item" v-show="isAdmin || isUser">
@@ -92,11 +92,26 @@ export default {
 
 
 <style scoped>
+.navbar-collapse {
+    justify-content: center;
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+#all_navbar_links[data-v-f1507c62] {
+    width: 100%;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid yellow;
+    width: 80%;
+    margin: auto;
+}
 #account_profile {
     height: 2rem;
 }
 #navbar_image {
-    height: 6rem;
+    height: 5rem;
 }
 #navbar_styling {
     background-color: #2A2A2A;
@@ -107,15 +122,21 @@ export default {
 #all_navbar_links {
     width: 100%;
     justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     border-bottom: 2px solid yellow;
     width: 80%;
 }
-#navbarSupportedContent {
-    display: flex;
-    justify-content: center;
-}
 nav a.router-link-exact-active {
     font-weight: bold;
 }
+
+
+@media (width< 990px) {
+    img {
+        display: none;
+    }
+}
+
+
 </style>

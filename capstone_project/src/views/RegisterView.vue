@@ -80,12 +80,12 @@ h1 {
   font-weight: bold;
 }
 .btn {
-  width: 10%;
+  width: 6rem;
   background-color: yellow;
   color: grey;
   border-radius: 0rem;
   padding: 0.5rem;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 .btn:hover {
   background-color: grey;
@@ -108,7 +108,7 @@ label {
   display: flex;
 }
 #styling {
-  height: 120vh;
+  height: 160vh;
   background-image: url("https://i.postimg.cc/YSWZJ7Qc/kghjvgchfigd.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -125,4 +125,21 @@ form {
   align-self: center;
   padding: 3rem;
 }
+
+
+
+@media (width< 550px) {
+  label {
+    display: none;
+  }
+  .mb-3 {
+    justify-content: center;
+  }
+  input {
+    width: 100%;
+  }
+}
+
+
+
 </style>
