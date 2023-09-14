@@ -9,13 +9,13 @@
          <div v-if="courses" class="container-fluid" id="table_position">
             <table class="container-fluid-2">
               <thead>
-                <th>Course ID</th>
+                <th id="display_nothing">Course ID</th>
                 <th>Course Name</th>
-                <th>Course Function</th>
-                <th>Course Description</th>
+                <th id="display_no">Course Function</th>
+                <th id="display_nothing">Course Description</th>
                 <th>Course Discount Price</th>
-                <th>Course Price</th>
-                <th>Course Image</th>
+                <th id="display_none">Course Price</th>
+                <th id="display_no">Course Image</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </thead>
@@ -23,13 +23,13 @@
   
                 <tbody>
                     <tr v-for="course in courses" :key="course.id">
-                      <td>{{ course.courseID }}</td>
+                      <td id="display_nothing">{{ course.courseID }}</td>
                       <td>{{ course.courseName }}</td>
-                      <td>{{ course.coursePurpose }}</td>
-                      <td>{{ course.courseDesc }}</td>
+                      <td id="display_no">{{ course.coursePurpose }}</td>
+                      <td id="display_nothing">{{ course.courseDesc }}</td>
                       <td>{{ course.discountPrice }}</td>
-                      <td>{{ course.coursePrice }}</td>
-                      <td><img :src="course.courseImage " :alt="course.courseName"></td>
+                      <td id="display_none">{{ course.coursePrice }}</td>
+                      <td id="display_no"><img :src="course.courseImage " :alt="course.courseName"></td>
                       <td><UpdateCourse/></td>
                       <td><button type="button" @click="deleteCourse(course.courseID)">Delete</button></td>
                     </tr>
@@ -46,20 +46,20 @@
          <div v-if="appointments" class="container-fluid" id="table_position">
             <table class="container-fluid-2">
               <thead>
-                <th>Appointment ID</th>
+                <th id="display_none">Appointment ID</th>
                 <th>Name</th>
-                <th>Surname</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Marital Status</th>
-                <th>Email Address</th>
-                <th>Cellphone Number</th>
+                <th id="display_no">Surname</th>
+                <th id="display_no">Age</th>
+                <th id="display_no">Gender</th>
+                <th id="display_none">Marital Status</th>
+                <th id="display_nothing">Email Address</th>
+                <th id="display_none">Cellphone Number</th>
                 <th>Appointment Time</th>
-                <th>Weight</th>
-                <th>Height</th>
-                <th>Disabilities</th>
-                <th>Injuries</th>
-                <th>Health Issues</th>
+                <th id="display_none">Weight</th>
+                <th id="display_none">Height</th>
+                <th id="display_none">Disabilities</th>
+                <th id="display_none">Injuries</th>
+                <th id="display_none">Health Issues</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </thead>
@@ -67,20 +67,20 @@
   
                 <tbody>
                     <tr v-for="appointment in appointments" :key="appointment.id">
-                      <td>{{ appointment.appointID }}</td>
+                      <td id="display_none">{{ appointment.appointID }}</td>
                       <td>{{ appointment.firstName }}</td>
-                      <td>{{ appointment.lastName }}</td>
-                      <td>{{ appointment.userAge }}</td>
-                      <td>{{ appointment.gender }}</td>
-                      <td>{{ appointment.maritalStatus }}</td>
-                      <td>{{ appointment.emailAdd }}</td>
-                      <td>{{ appointment.cellNumber }}</td>
+                      <td id="display_no">{{ appointment.lastName }}</td>
+                      <td id="display_no">{{ appointment.userAge }}</td>
+                      <td id="display_no">{{ appointment.gender }}</td>
+                      <td id="display_none">{{ appointment.maritalStatus }}</td>
+                      <td id="display_nothing">{{ appointment.emailAdd }}</td>
+                      <td id="display_none">{{ appointment.cellNumber }}</td>
                       <td>{{ appointment.appointTime }}</td>
-                      <td>{{ appointment.userWeight }}</td>
-                      <td>{{ appointment.userHeight }}</td>
-                      <td>{{ appointment.userDisability }}</td>
-                      <td>{{ appointment.userInjury }}</td>
-                      <td>{{ appointment.userHealth }}</td>
+                      <td id="display_none">{{ appointment.userWeight }}</td>
+                      <td id="display_none">{{ appointment.userHeight }}</td>
+                      <td id="display_none">{{ appointment.userDisability }}</td>
+                      <td id="display_none">{{ appointment.userInjury }}</td>
+                      <td id="display_none">{{ appointment.userHealth }}</td>
                       <td><UpdateAppointment/></td>
                       <td><button type="button" @click="deleteAppointment(appointment.appointID)">Delete</button></td>
                     </tr>
@@ -99,16 +99,16 @@
          <div v-if="users" class="container-fluid" id="table_position">
             <table class="container-fluid-2">
               <thead>
-                <th>User ID</th>
+                <th id="display_nothing">User ID</th>
                 <th>Name</th>
                 <th>Surname</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Marital Status</th>
-                <th>Email Address</th>
-                <th>Cellphone Number</th>
-                <th>User Image</th>
-                <th>User Role</th>
+                <th id="display_no">Age</th>
+                <th id="display_no">Gender</th>
+                <th id="display_none">Marital Status</th>
+                <th id="display_nothing">Email Address</th>
+                <th id="display_none">Cellphone Number</th>
+                <th id="display_none">User Image</th>
+                <th id="display_no">User Role</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </thead>
@@ -116,16 +116,16 @@
   
                 <tbody>
                     <tr v-for="user in users" :key="user.id">
-                      <td>{{ user.userID }}</td>
+                      <td id="display_nothing">{{ user.userID }}</td>
                       <td>{{ user.firstName }}</td>
                       <td>{{ user.lastName }}</td>
-                      <td>{{ user.userAge }}</td>
-                      <td>{{ user.gender }}</td>
-                      <td>{{ user.maritalStatus }}</td>
-                      <td>{{ user.emailAdd }}</td>
-                      <td>{{ user.cellNumber }}</td>
-                      <td>{{ user.userProfile }}</td>
-                      <td>{{ user.userRole }}</td>
+                      <td id="display_no">{{ user.userAge }}</td>
+                      <td id="display_no">{{ user.gender }}</td>
+                      <td id="display_none">{{ user.maritalStatus }}</td>
+                      <td id="display_nothing">{{ user.emailAdd }}</td>
+                      <td id="display_none">{{ user.cellNumber }}</td>
+                      <td id="display_none">{{ user.userProfile }}</td>
+                      <td id="display_no">{{ user.userRole }}</td>
                       <td><UpdateUser/></td>
                       <td><button type="button" @click="deleteUser(user.userID)">Delete</button></td>
                     </tr>
@@ -213,4 +213,30 @@ h1 {
   color: black;
   padding: 2rem;
 }
+
+
+
+
+
+@media (width< 1200px) {
+  #display_none {
+    display: none;
+  }
+}
+
+
+@media (width< 700px) {
+  #display_nothing {
+    display: none;
+  }
+}
+
+@media (width< 480px) {
+  #display_no {
+    display: none;
+  }
+}
+
+
+
 </style>

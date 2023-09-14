@@ -10,8 +10,8 @@
       <table class="container-fluid-2">
         <thead>
           <th>Course Name</th>
-          <th>Course Function</th>
-          <th>Course Description</th>
+          <th id="display_none">Course Function</th>
+          <th id="display_none">Course Description</th>
           <th>Course Price</th>
           <th>Course Image</th>
           <th>Delete</th>
@@ -20,8 +20,8 @@
         <tbody>
           <tr v-for="item in cart" :key="item.cartID">
             <td>{{ item.courseName }}</td>
-            <td>{{ item.coursePurpose }}</td>
-            <td>{{ item.courseDesc }}</td>
+            <td id="display_none">{{ item.coursePurpose }}</td>
+            <td id="display_none">{{ item.courseDesc }}</td>
             <td>{{ item.discountPrice }}</td>
             <td><img :src="item.courseImage" :alt="item.courseName"></td>
             <td><button @click.prevent="remove(item.cartID)">Delete</button></td>
@@ -51,13 +51,16 @@ export default {
 decimalSpace(price) {
   return price.toFixed(2);
 },
+
+
+
 remove(cartID) {
   let cartData = JSON.parse(localStorage.getItem("cart")) || [];  // retrieve from local storage
   const numItem = cartData.findIndex(item => item.cartID === cartID); // search for item with cartID that matches provided cartID
   if (numItem !== -1) cartData.splice(numItem, 1); // item found will be deleted/removed
   localStorage.setItem("cart", JSON.stringify(cartData)); // updates cart
   JSON.parse(localStorage.getItem("cart"));
-  this.$store.commit("setCart", cartData);  // latest update
+  this.$store.commit("setCart", cartData);  // fetch to not show deleted item
 },
 }
 }
@@ -125,4 +128,29 @@ button {
 button:hover {
   color: red;
 }
+
+
+
+
+
+
+
+@media (width< 490px) {
+  #display_none {
+    display: none;
+  }
+}
+
+
+@media (width< 320px) {
+  img {
+    height: 5rem;
+  }
+}
+
+
+
+
+
+
 </style>

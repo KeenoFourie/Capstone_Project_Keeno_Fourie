@@ -111,4 +111,19 @@
 .links_in_footer:hover {
     color: #787878;
 }
+
+
+
+@media (width< 600px) {
+    #bottom_footer {
+        flex-direction: column;
+    }
+    #top_footer {
+        flex-direction: column;
+    }
+}
+
+
+
+
 </style>

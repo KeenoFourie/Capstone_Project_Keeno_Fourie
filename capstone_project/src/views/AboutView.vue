@@ -308,4 +308,49 @@
     border-bottom: 2px solid black;
     margin: 0rem 4rem 0rem;
 }
+
+
+
+@media (width< 1100px) {
+  #our_mission, #our_team, #your_level {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .card-img {
+    height: 10rem;
+    width: 10rem;
+  }
+  #our_mission_text, #our_team_text, #your_level_text {
+    width: 60%;
+    padding: 0rem;
+    margin: 0rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (width< 450px) {
+  #our_mission_text, #our_team_text, #your_level_text {
+    width: 90%;
+    padding: 0rem;
+    margin: 0rem;
+    margin-top: 1rem;
+  }
+  .partner_text {
+    width: 100%;
+  }
+}
+
+
+@media (width< 700px) {
+  .partners_styling {
+    display: flex;
+    flex-direction: column;
+  }
+  #partner_image {
+    margin-top: 1rem;
+  }
+}
+
+
 </style>

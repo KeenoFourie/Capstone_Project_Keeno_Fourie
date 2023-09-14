@@ -130,6 +130,7 @@ export default {
 }
 #cards_positioning {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 #courses_card {
@@ -166,6 +167,7 @@ export default {
 #landing_page_welcome {
   background-image: url("https://wallpaperaccess.com/full/804850.jpg");
   background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: 100%;
   color: white;
   display: flex;
@@ -191,4 +193,48 @@ export default {
   background-color: #464646;
   border: none;
 }
+
+
+@media (width< 1200px) {
+  #landing_page_welcome {
+    background-attachment: local;
+  }
+  #arrow_down {
+    display: none;
+  }
+}
+
+
+@media (width< 1100px) {
+  #get_involved {
+    display: none;
+  }
+  #structure_welcome_text {
+    height: 50vh;
+    align-items: center;
+  }
+}
+
+
+@media (width< 750px) {
+
+  #structure_welcome_text {
+    height: 30vh;
+    align-items: center;
+  }
+}
+
+
+@media (width< 600px) {
+  #landing_page_welcome {
+    background-image: url("https://i.postimg.cc/fThP1jQd/804850-1.jpg");
+  }
+  #text_welcome_text {
+    width: 90%;
+  }
+}
+
+
+
+
 </style>

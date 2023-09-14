@@ -32,4 +32,18 @@ div {
     align-items: center;
     padding-inline: 10rem;
 }
+
+
+
+
+@media (width< 480px) {
+    div {
+        height: 80vh;
+        padding: 4rem;
+    }
+  }
+
+
+
+
 </style>

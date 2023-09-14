@@ -112,4 +112,17 @@ input {
 input {
     margin-bottom: 0.5rem;
 }
+
+
+
+
+@media (width< 1300px) {
+  #plus_course {
+    display: contents;
+}
+}
+
+
+
+
 </style>

@@ -59,12 +59,12 @@ h1 {
     font-weight: bold;
 }
 .btn {
-    width: 10%;
+    width: 6rem;
     background-color: yellow;
     color: grey;
     border-radius: 0rem;
     padding: 0.5rem;
-    margin: 1rem;
+    margin: 0.5rem;
 }
 .btn:hover {
     background-color: grey;
@@ -103,4 +103,26 @@ form {
     align-self: center;
     padding: 3rem;
 }
+
+
+
+
+@media (width< 550px) {
+    label {
+      display: none;
+    }
+    .mb-3 {
+      justify-content: center;
+    }
+    input {
+      width: 100%;
+    }
+  }
+
+
+
+
+
+
+
 </style>

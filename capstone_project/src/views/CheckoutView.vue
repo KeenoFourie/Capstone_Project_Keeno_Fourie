@@ -54,9 +54,6 @@ button {
   border: 0rem;
   background-color: yellow;
   padding: 0.7rem;
-  position: relative;
-  top: 2.35rem;
-  width: 100%;
 }
 button:hover {
   background-color: black;
@@ -92,5 +89,26 @@ div {
   justify-content: center;
   align-items: center;
 }
+
+
+
+
+@media (width< 600px) {
+  #checkout_page {
+    width: 80%;
+  }
+}
+
+@media (width< 350px) {
+  #checkout_page {
+    height: 70vh;
+  }
+}
+
+
+
+
+
+
 </style>
  

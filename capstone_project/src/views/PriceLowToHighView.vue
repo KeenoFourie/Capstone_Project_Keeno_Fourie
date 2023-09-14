@@ -105,4 +105,24 @@ export default {
     margin: 2rem;
     border: none;
 }
+
+
+
+
+
+
+@media (width< 350px) {
+  #search_sort_filter_buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      justify-content: space-evenly;
+  }
+}
+
+
+
+
+
+
 </style>

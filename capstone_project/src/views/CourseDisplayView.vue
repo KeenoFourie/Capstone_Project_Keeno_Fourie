@@ -114,4 +114,36 @@ h6 {
     justify-content: center;
     align-items: center;
 }
+
+
+
+@media (width< 870px) {
+    #view_one_position {
+        display: flex;
+        flex-direction: column;
+    }
+    #view_once_image {
+        height: 20rem;
+        margin: 1rem;
+    }
+    #text_view_once {
+        width: 80%;
+    }
+  }
+
+
+  @media (width< 350px) {
+    #view_once_image {
+        height: 15rem;
+        margin: 1rem;
+    }
+    #text_view_once {
+        width: 90%;
+    }
+  }
+
+
+
+
+
 </style> 

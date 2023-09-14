@@ -47,4 +47,48 @@ h1 {
     justify-content: center;
     justify-self: center;
 }
+
+
+
+
+@media (width< 1000px) {
+    #appointment_page {
+        background-attachment: local;
+        justify-content: center;
+    }
+    #appointment_welcome {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+    }
+  }
+
+
+@media (width< 700px) {
+    #appointment_page {
+        background-attachment: local;
+        background-size: cover;
+        justify-content: center;
+    }
+    #appointment_welcome {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+  }
+
+
+
+  @media (width< 650px) {
+    #appointment_page {
+        background-image: url("https://i.postimg.cc/rsdMp9YN/1308025.jpg");
+    }
+  }
+
+
+
+
+
 </style>

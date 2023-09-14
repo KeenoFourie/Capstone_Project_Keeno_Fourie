@@ -35,4 +35,24 @@ div {
     align-items: center;
     padding-inline: 10rem;
 }
+
+
+
+@media (width< 1100px) {
+    p {
+        flex-direction: column;
+    }
+  }
+
+
+
+@media (width< 600px) {
+    div {
+        height: 100vh;
+        padding: 4rem;
+    }
+  }
+
+
+
 </style>

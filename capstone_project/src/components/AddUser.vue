@@ -64,7 +64,7 @@ data() {
         emailAdd: "",
         userPassword: "",
         cellNumber: "",
-        userProfile: "",
+        userProfile: "https://i.postimg.cc/j5xPwv35/profile-image.webp",
         userRole: "",
     }
   }
@@ -132,4 +132,22 @@ input {
 input {
     margin-bottom: 0.5rem;
 }
+
+
+
+
+
+
+@media (width< 1300px) {
+  #plus_user {
+    display: contents;
+}
+}
+
+
+
+
+
+
+
 </style>
