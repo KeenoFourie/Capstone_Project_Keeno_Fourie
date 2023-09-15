@@ -36,6 +36,12 @@
                 </tbody>
             </table>
         </div>
+
+
+        <!-- spinner -->
+        <div v-else class="row justify-content-center gap-3">
+          <SpinnerComp/>
+        </div>
       
       
       
@@ -87,6 +93,12 @@
                 </tbody>
             </table>
         </div>
+
+
+        <!-- spinner -->
+        <div v-else class="row justify-content-center gap-3">
+          <SpinnerComp/>
+        </div>
        
        
        
@@ -135,6 +147,17 @@
 
 
 
+
+
+
+
+         <!-- spinner -->
+         <div v-else class="row justify-content-center gap-3">
+          <SpinnerComp/>
+        </div>
+
+
+
     </div>
 </template>
 
@@ -144,6 +167,7 @@ import UpdateAppointment from '../components/UpdateAppointment.vue';
 import UpdateUser from '../components/UpdateUser.vue';
 import AddCourse from '../components/AddCourse.vue';
 import AddUser from '../components/AddUser.vue';
+import SpinnerComp from '../components/SpinnerComp.vue';
 
 
 export default {
@@ -152,7 +176,8 @@ export default {
     UpdateAppointment,
     UpdateUser,
     AddCourse,
-    AddUser
+    AddUser,
+    SpinnerComp
 },
     computed: {
       courses() {

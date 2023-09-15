@@ -1,51 +1,72 @@
 <template>
-    <div>
-        <!-- displaying courses -->
-        <div id="courses_page">
-            <h1 id="heading_displayed_courses">Try Out One Of Our Courses...</h1>
-       </div>
-           
+  <div>
+      <!-- displaying courses -->
+      <div id="courses_page">
+          <h1 id="heading_displayed_courses">Try Out One Of Our Courses...</h1>
+     </div>
+         
 <!-- search, sort, filter -->
 
 
-<div id="search_sort_filter_buttons">
-    <div id="sort">
-      <!-- sort -->
-        <div class="dropdown">
-          <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sort</a>
-          <ul class="dropdown-menu">
-            <li><router-link class="dropdown-item" to="/price_low">Price (Lowest-Highest)</router-link></li>
-            <li><router-link class="dropdown-item" to="/price_high">Price (Highest-Lowest)</router-link></li>
-            <li><router-link class="dropdown-item" to="/alphabetical">Alphabetical</router-link></li>
-          </ul>
-        </div>
+<div v-if="courses">
+  <div id="search_sort_filter_buttons">
+      <div id="sort">
+        <!-- sort -->
+          <div class="dropdown">
+            <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sort</a>
+            <ul class="dropdown-menu">
+              <li><router-link class="dropdown-item" to="/price_low">Price (Lowest-Highest)</router-link></li>
+              <li><router-link class="dropdown-item" to="/price_high">Price (Highest-Lowest)</router-link></li>
+              <li><router-link class="dropdown-item" to="/alphabetical">Alphabetical</router-link></li>
+            </ul>
+          </div>
+      </div>
+  
+  
+  
+      <form action="/search" method="get">
+        <input type="text" name="q" placeholder="Search...">
+      </form>
+  
+  
     </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+           <div id="courses_displaying">
+               <div id="card" class="card text-bg-dark" v-for="courses in courses" :key="courses.courseID">
+                   <img id="courses_cards_image" :src="courses.courseImage" class="card-img" :alt="courses.courseName">
+                   <div class="card-img-overlay" id="course_text_display">
+                      <div id="line"></div>
+                       <h2 class="card-title"><b>{{ courses.courseName }}</b></h2>
+                       <h5 id="course_purpose">{{ courses.coursePurpose }}</h5>
+                       <router-link :to="{name:'singlecourse', params:{courseID: courses.courseID}}" id="view_more_button">Read More</router-link>
+                   </div>
+               </div>             
+          </div>
+          
+</div>
+
+      <!-- spinner -->
+      <div v-else class="row justify-content-center gap-3">
+          <SpinnerComp/>
+        </div>
+
+
   </div>
-
-
-<!-- card display -->
-
-
-         <div id="courses_displaying">
-             <div id="card" class="card text-bg-dark" v-for="courses in courses" :key="courses.courseID">
-                 <img id="courses_cards_image" :src="courses.courseImage" class="card-img" :alt="courses.courseName">
-                 <div class="card-img-overlay" id="course_text_display">
-                    <div id="line"></div>
-                     <h2 class="card-title"><b>{{ courses.courseName }}</b></h2>
-                     <h5 id="course_purpose">{{ courses.coursePurpose }}</h5>
-                     <router-link :to="{name:'singlecourse', params:{courseID: courses.courseID}}" id="view_more_button">Read More</router-link>
-                 </div>
-             </div>             
-        </div>
-        
-
-
-    </div>
 </template>
 
-
 <script>
+import SpinnerComp from '../components/SpinnerComp.vue';
 export default {
+  components: { SpinnerComp },
   computed: {
     courses() {
       return this.$store.state.courses;
@@ -56,8 +77,12 @@ export default {
   },
 };
 </script>
-
 <style scoped>
+#search_sort_filter_buttons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
 #heading_displayed_courses {
     color: black;
     padding: 2rem;
@@ -111,17 +136,15 @@ export default {
 
 
 
+
 @media (width< 350px) {
-  #search_sort_filter_buttons {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: space-evenly;
+    #search_sort_filter_buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+    }
   }
-}
-
-
-
 
 
 
