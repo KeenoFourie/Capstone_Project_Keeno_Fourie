@@ -134,6 +134,7 @@ export default {
   justify-content: center;
 }
 #courses_card {
+  border: none;
   height: 18rem;
   width: 18rem;
 }
@@ -192,6 +193,9 @@ export default {
   color: yellow;
   background-color: #464646;
   border: none;
+}
+#heading_asked_questions {
+  padding: 1rem;
 }
 
 
