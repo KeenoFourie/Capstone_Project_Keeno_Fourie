@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="button_plus_course">
         <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal57" id="plus_course">+ Course</button>
   
@@ -82,7 +82,7 @@ methods: {
 #plus_course {
     position: absolute;
     right: 4rem;
-    top: 10rem;
+    top: 9rem;
 }
 .modal-content {
   border-radius: 0rem;
@@ -119,6 +119,9 @@ input {
 @media (width< 1300px) {
   #plus_course {
     display: contents;
+}
+#button_plus_course {
+  padding: 1rem;
 }
 }
 

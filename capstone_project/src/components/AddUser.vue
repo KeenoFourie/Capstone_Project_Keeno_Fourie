@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="button_plus_user">
         <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop12" id="plus_user">+ User</button>
   
@@ -141,6 +141,9 @@ input {
 @media (width< 1300px) {
   #plus_user {
     display: contents;
+}
+#button_plus_user {
+  padding: 1rem;
 }
 }
 
