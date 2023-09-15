@@ -29,9 +29,9 @@
                     <li class="nav-item" v-show="isAdmin">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/admin">Admin</router-link>
                     </li>
-                    <li class="nav-item" v-show="isAdmin || isUser">
+                    <li class="nav-item" v-show="isAdmin || isUser" :user="userr" :key="userr.userID">
                         <router-link id="navbar_links" class="nav-link" aria-current="page" to="/account">
-                            ok
+                            <img id="account_profile" :src="userr.userProfile" :alt="userr.firstName">
                         </router-link>
                     </li>
                     <li class="nav-item" v-show="isAdmin || isUser">

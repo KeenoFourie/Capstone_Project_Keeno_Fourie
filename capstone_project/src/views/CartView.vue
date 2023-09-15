@@ -6,7 +6,7 @@
     </div>
 
     <!-- table for courses-->
-    <div v-if="cart" class="container-fluid" id="table_position">
+    <div v-if="cart.length > 0" class="container-fluid" id="table_position">
       <table class="container-fluid-2">
         <thead>
           <th>Course Name</th>
@@ -29,11 +29,20 @@
         </tbody>
       </table>
     </div>
+
+<!-- spinner -->
+<div v-else class="row justify-content-center gap-3">
+  <SpinnerComp/>
+</div>
+
+
   </div>
 </template>
 
 <script>
+import SpinnerComp from '../components/SpinnerComp.vue';
 export default {
+  components: { SpinnerComp },
   props: ["cartID"],
   created() {
       const cartData = JSON.parse(localStorage.getItem("cart"));

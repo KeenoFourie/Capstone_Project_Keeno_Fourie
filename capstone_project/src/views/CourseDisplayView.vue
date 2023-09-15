@@ -1,28 +1,39 @@
 <template>
     <div>
-        <div v-for="item in course" :key="item.courseID" id="view_one_position">
-            <img id="view_once_image" :src="item.courseImage" :alt="item.courseName">
-            <div id="text_view_once">
-                <h2>R{{item.discountPrice}}</h2>
-                <h6>R{{item.coursePrice}}</h6>
-                <h1>{{item.courseName}}</h1>
-                <h4>{{item.coursePurpose}}</h4>   
-                <div id="line"></div>
-                <h5>{{item.courseDesc}}</h5>
-                <div id="button_cart_and_price">
-                      <button @click.prevent="addToCart(item)" :to="{name:'addtocart', params:{courseID: item.courseID}}" id="button">+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                      </svg> Add To Cart</button>
+        <div v-if="course">
+            <div v-for="item in course" :key="item.courseID" id="view_one_position">
+                <img id="view_once_image" :src="item.courseImage" :alt="item.courseName">
+                <div id="text_view_once">
+                    <h2>R{{item.discountPrice}}</h2>
+                    <h6>R{{item.coursePrice}}</h6>
+                    <h1>{{item.courseName}}</h1>
+                    <h4>{{item.coursePurpose}}</h4>   
+                    <div id="line"></div>
+                    <h5>{{item.courseDesc}}</h5>
+                    <div id="button_cart_and_price">
+                          <button @click.prevent="addToCart(item)" :to="{name:'addtocart', params:{courseID: item.courseID}}" id="button">+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                          </svg> Add To Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- spinner -->
+      <div v-else class="row justify-content-center gap-3">
+        <SpinnerComp/>
+      </div>
+
+
     </div>
 </template>
 
 <script>
+import SpinnerComp from '../components/SpinnerComp.vue';
 
 
 export default {
+  components: { SpinnerComp },
     data() {
   return {
     newCart: {
